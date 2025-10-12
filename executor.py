@@ -15,7 +15,7 @@ def ai_suggest_command(query):
         "show current directory": "pwd",
         "create folder": "mkdir",
         "remove file": "rm",
-        "delete folder": "rm -r",
+        "delete folder": "rmkdir",
         "create file": "touch",
         "read file": "cat",
         "show date": "date",
@@ -23,7 +23,7 @@ def ai_suggest_command(query):
     }
     for task, cmd in task_map.items():
         if task in query:
-            return f"Try: {cmd} [args]"
+            return f"Try: {cmd} <args>"
     return "Sorry, I couldn't find a matching command."
 
 def handle_ai_query(command):
