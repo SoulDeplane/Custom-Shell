@@ -10,7 +10,7 @@ def main():
                 print("Exiting Axon Core...")
                 break
             elif command.lower()=="about":
-                print("Axon Core was created as a part of the OS project in 2025.\nIt is a custom shell that created for the ease of the user.")
+                print("Axon Core was created as a part of the OS project in 2025.\nIt is a custom shell that was created for the ease of the user.")
                 continue
             elif len(command)==0:
                 continue
@@ -20,10 +20,21 @@ def main():
                 print("exit/quit/stop       Exit the shell")
                 print("about                Learn about Axon Core")
                 print("clear                Clear the screen")
-                print("cd                   Change directory")
+                print("cd <dir>             Change directory")
                 print("pwd                  Show current directory")
-                print("echo                 Print messages")
+                print("ls [dir]             List files in directory")
+                print("mkdir <name>         Create a new directory")
+                print("rm <file>            Remove file")
+                print("rmdir <dir>          Remove empty directory")
+                print("touch <file>         Create an empty file")
+                print("cat <file>           Display file contents")
+                print("head <file> [n]      Show first n lines (default 10)")
+                print("tail <file> [n]      Show last n lines (default 10)")
+                print("date                 Show current date")
+                print("time                 Show current time")
+                print("echo <message>       Print messages")
                 print("<command>            Run external commands")
+
             elif "echo" in command:
                 print(command[5:])
             elif command=="pwd":
