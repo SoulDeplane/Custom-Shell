@@ -83,7 +83,7 @@ def ai_suggest_command(query):
 }
     for task, cmd in task_map.items():
         if task in query:
-            return f"Try: {cmd} <args>"
+            return f"Try: {cmd} <args>" if cmd not in ["pwd", "date", "time"] else f"Try: {cmd}"
     return "Sorry, I couldn't find a matching command."
 
 def handle_ai_query(command):
