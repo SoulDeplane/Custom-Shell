@@ -1,11 +1,14 @@
 import os
 from executor import execute_command
+from history import Command_History
+history=Command_History()
 
 def main():
-    print("Welcome to Axon Core")
+    print("Welcome to Axon Core...")
     while True:
         try:
             command = input("\033[1;31mAxon Core>> \033[0m") #Red, bold text
+            history.add(command)
             if command.lower() in ["exit", "quit", "stop"]:
                 print("Exiting Axon Core...")
                 break
@@ -34,7 +37,10 @@ def main():
                 print("time                 Show current time")
                 print("echo <message>       Print messages")
                 print("<command>            Run external commands")
-
+            elif command.lower() == "history":
+                history.show()
+            elif command.lower() == "history clear" or command.lower() == "clear history":
+                history.clear()
             elif "echo" in command:
                 print(command[5:])
             elif command=="pwd":
