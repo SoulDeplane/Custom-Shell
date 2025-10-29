@@ -43,11 +43,16 @@ def main():
                 history.clear()
             elif "echo" in command:
                 print(command[5:])
-            elif command=="pwd":
+            elif command.lower()=="pwd":
                 print(os.getcwd())
-            elif command=="clear":
+            elif command.lower()=="clear":
                 for i in range(40):
                     print("\n")
+            elif command.lower()== "date and time" or command.lower()=="time and date":
+                from datetime import datetime
+                now = datetime.now()
+                print("Date:", now.strftime("%Y-%m-%d"))
+                print("Time:", now.strftime("%H:%M:%S"))
             else:
                 execute_command(command)
         except KeyboardInterrupt:
